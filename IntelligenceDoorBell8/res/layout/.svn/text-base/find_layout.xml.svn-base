@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <RelativeLayout  
+                 android:background="@drawable/title"   
+                 android:layout_width="500.0dip"
+                 android:layout_height="50.0dip"
+                  > 
+    <com.example.segmentcontrolview.SegmentView 
+            
+              android:id="@+id/segment"
+              android:layout_width="240dip"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dip"
+              android:layout_marginLeft="38.0dip"
+              android:padding="0.5dip"
+              android:background="@drawable/whole"
+                    >
+     </com.example.segmentcontrolview.SegmentView>
+   </RelativeLayout> 
+     
+     <FrameLayout    
+                android:id="@+id/contentsegment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                    ></FrameLayout>
+
+</LinearLayout>

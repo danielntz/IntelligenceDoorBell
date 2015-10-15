@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http
+END
+Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/Utils.java
+END
+SerializableCookie.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/SerializableCookie.java
+END
+TextHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/TextHttpResponseHandler.java
+END
+BinaryHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/BinaryHttpResponseHandler.java
+END
+RetryHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/RetryHandler.java
+END
+RequestHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/RequestHandle.java
+END
+MyRedirectHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/MyRedirectHandler.java
+END
+SaxAsyncHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/SaxAsyncHttpResponseHandler.java
+END
+RangeFileAsyncHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/RangeFileAsyncHttpResponseHandler.java
+END
+PersistentCookieStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/PersistentCookieStore.java
+END
+MySSLSocketFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/MySSLSocketFactory.java
+END
+JsonStreamerEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/JsonStreamerEntity.java
+END
+SyncHttpClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/SyncHttpClient.java
+END
+AsyncHttpClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/AsyncHttpClient.java
+END
+ResponseHandlerInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/ResponseHandlerInterface.java
+END
+Base64OutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/Base64OutputStream.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/package-info.java
+END
+JsonHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/JsonHttpResponseHandler.java
+END
+SimpleMultipartEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/SimpleMultipartEntity.java
+END
+Base64DataException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/Base64DataException.java
+END
+HttpPatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/HttpPatch.java
+END
+HttpDelete.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/HttpDelete.java
+END
+HttpGet.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/HttpGet.java
+END
+BaseJsonHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/BaseJsonHttpResponseHandler.java
+END
+Base64.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/Base64.java
+END
+DataAsyncHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/DataAsyncHttpResponseHandler.java
+END
+AsyncHttpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/AsyncHttpRequest.java
+END
+JsonValueInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/JsonValueInterface.java
+END
+PreemptiveAuthorizationHttpRequestInterceptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/PreemptiveAuthorizationHttpRequestInterceptor.java
+END
+AsyncHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/AsyncHttpResponseHandler.java
+END
+FileAsyncHttpResponseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/FileAsyncHttpResponseHandler.java
+END
+RequestParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/IntelligenceDoorBell/!svn/ver/19/IntelligenceDoorBell6/src/com/loopj/android/http/RequestParams.java
+END
