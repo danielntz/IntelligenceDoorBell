@@ -2,8 +2,10 @@ package com.example.loginetc;
 
 
 
+
 import com.example.uiproject.R;
 import com.example.uiproject.mainactivity;
+import com.example.uiproject.selectfunction;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
@@ -22,6 +24,7 @@ public class MainActivity extends Activity  implements OnClickListener{
 	 private TextView  register;
 	 private TextView  findpassword;
 	 private Button    enter;
+	 private Button zhendong;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,10 @@ public class MainActivity extends Activity  implements OnClickListener{
 		enter = (Button)findViewById(R.id.enter);
 		register = (TextView)findViewById(R.id.register);
 		findpassword = (TextView)findViewById(R.id.forgetmima);
+	//	zhendong = (Button)findViewById(R.id.zhendong);
 	    enter.setOnClickListener(this);
 		register.setOnClickListener(this);
+	//	zhendong.setOnClickListener(this);
 		findpassword.setOnClickListener(this);
 		
 	}
@@ -43,16 +48,18 @@ public class MainActivity extends Activity  implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.register:
 			 Intent intent0 = new Intent(MainActivity.this,register.class);
-			 startActivity(intent0);
+			  startActivity(intent0);
 			 break;
 		case R.id.forgetmima :
 			 Intent intent1 = new Intent(MainActivity.this,forget.class);
 			 startActivity(intent1);
 			 break;
-		case R.id.enter:
+	     	case R.id.enter:
 			 Intent intent2 = new Intent(MainActivity.this,mainactivity.class);
 			 startActivity(intent2);
+			 finish();
 			 break;
+		
 		
 		}
 	}

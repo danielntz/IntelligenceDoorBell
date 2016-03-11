@@ -1,5 +1,6 @@
 package com.example.uiassist;
 
+
 import com.example.uiproject.R;
 import com.example.uiproject.messageFragment;
 
@@ -62,7 +63,7 @@ public class myadapter  extends BaseAdapter implements OnClickListener{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		if(convertView == null){
-		   convertView = inflater.inflate(R.layout.pauseinfo, null);
+		     convertView = inflater.inflate(R.layout.pauseinfo, null);
 	       view4 = (TextView)convertView.findViewById(R.id.checkinfo);
 		   view5 = (TextView)convertView.findViewById(R.id.checkvideo);
 		   view1 = (TextView)convertView.findViewById(R.id.name);

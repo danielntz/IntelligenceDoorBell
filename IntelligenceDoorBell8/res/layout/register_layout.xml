@@ -55,6 +55,7 @@
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="8.0dip"
                    android:layout_marginTop="6.0dip"
+                   android:inputType="phone"
                    android:textSize="20sp"
                    android:singleLine="true"
                    android:background="@null"
@@ -78,21 +79,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:layout_marginLeft="15.0dip"
+                android:layout_marginLeft="9.0dip"
                 android:layout_marginTop="6.0dip"
-                android:text="验证码 :"/>
+                android:text="设备编号:"/>
          <EditText   
                    android:id="@+id/yanzheng"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_marginLeft="90.0dip"
+                   android:layout_marginLeft="99.0dip"
                    android:layout_marginTop="6.0dip"
                    android:singleLine="true"
                    android:background="@null"
                    android:maxLength="9"
+                   android:enabled="false"
+                   android:inputType="number"
                    android:textSize="20.0sp"
-                   android:hint="必填" />
-         
+                   android:textColor="#00000000"
+                   android:hint="请扫二维码" />
+     <!-- 
          <Button  
                   android:layout_alignParentRight="true"
                    android:id="@+id/switchphoto"
@@ -101,7 +105,7 @@
                    android:layout_marginLeft="100.0dip"
                    android:layout_marginTop="6.0dip"
                    android:background="@drawable/yanzheng"
-                   
+                     -->   
                    />
         </RelativeLayout>
        
@@ -163,6 +167,7 @@
                    android:layout_marginTop="6.0dip"
                    android:singleLine="true"
                    android:background="@null"
+                   android:password="true"
                    android:textSize="20.0sp"
                   
                    android:hint="必填" />  
@@ -195,11 +200,18 @@
                    android:layout_marginTop="6.0dip"
                    android:singleLine="true"
                    android:background="@null"
+                   android:password="true"
                    android:textSize="20.0sp"
                   
                    android:hint="必填" />  
        </LinearLayout>         
      
-    
+        <Button  
+                        android:id="@+id/saoyisao"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="扫一扫"
+                        />
 
 </LinearLayout>

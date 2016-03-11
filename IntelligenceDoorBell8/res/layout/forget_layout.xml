@@ -58,6 +58,7 @@
                    android:layout_marginTop="6.0dip"
                    android:textSize="20sp"
                    android:singleLine="true"
+                   android:inputType="phone"
                    android:background="@null"
                    
                    android:hint="必填" />
@@ -78,18 +79,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:layout_marginLeft="15.0dip"
+                android:layout_marginLeft="13.0dip"
                 android:layout_marginTop="6.0dip"
-                android:text="昵     称:"/>
+                android:text="验 证 码:"/>
          <EditText   
                    android:id="@+id/nickname"
-                   android:layout_width="wrap_content"
+                   android:layout_width="50dip"
+               
+                   android:maxLength="6"
+                   
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="8.0dip"
                    android:layout_marginTop="6.0dip"
                    android:singleLine="true"
                    android:background="@null"
+                   android:inputType="number"
                    android:textSize="20.0sp"
                    android:hint="必填" />  
+        <RelativeLayout  
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true">       
+         <Button   
+                           android:id="@+id/getCode"
+                         
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                          android:layout_marginLeft="80dip"
+                           android:text="验证码"
+                           android:textSize="20sp"
+                      
+                           android:textColor="#FFFFFFFF"
+                           android:background="@drawable/orange"/>
+         </RelativeLayout>    
        </LinearLayout>         
+       
 </LinearLayout>

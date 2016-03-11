@@ -1,5 +1,7 @@
 package com.example.uiproject;
 
+import com.example.allinformation.biaoshi;
+import com.example.loginetc.MainActivity;
 import com.example.segmentcontrolview.Onsegmentlistenerclicker;
 import com.example.segmentcontrolview.SegmentView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -12,9 +14,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +55,8 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
       private TextView   four;      
       
       private SegmentView  view1 = null;
+      private  boolean   flag = true;
+      private  int  count = 0 ;
       
       
       private FragmentManager frangementmanager; //用于对fragement处理
@@ -55,8 +64,9 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
 	  //获得侧滑菜单
       private SlidingMenu sm;
       
-	
-	
+	   //进入此界面后，需要每隔几秒钟捕获服务器发来的信息，获得相应信息后
+      // 手机震动，弹出选择功能界面
+	  
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -65,9 +75,12 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
 		setBehindContentView(R.layout.cehua);
 		setContentView(R.layout.activity_main);
       	frangementmanager =   getSupportFragmentManager() ;
-		initcehua();
+        new  Thread(new zhendong()).start();
+       	initcehua();
       	init();
 		setTabSelection(0);
+		
+   
 	
 		
 	}
@@ -238,6 +251,51 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
 			break;
 		}
 	}
+	
+	public  class    zhendong  implements Runnable  {
 
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			            Vibrator   vibrator = (Vibrator)getSystemService(Service.VIBRATOR_SERVICE);  //获得震动服务
+	                    while(true){
+	                    	//用来监听从服务器发过来的信息数据
+	                     //获得对应的数据后，震动且弹出选择功能界面
+	                    	//是否获得了相应的提示信息
+	                    	if(biaoshi.flag){
+	                    	vibrator.vibrate(600);
+	                    	Intent intent = new Intent();
+	                    	intent.setClass(getApplication(), selectfunction.class);
+	                    	startActivity(intent);
+	                    	Log.i("TAG", "sdfsdf");
+	                        new biaoshi().setbiaoshi(false);  	
+	                    	}
+	                  try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	                }
+	                    }
+	}
+	
+   
+   //监听一下手机上的按键，以防退出程序
+ 	@Override
+ 	public boolean onKeyUp(int keyCode, KeyEvent event) {
+ 		// TODO Auto-generated method stub
+ 	
+ 		  if(count == 1 ){
+ 			  System.exit(0);
+ 		  }
+ 		if(event.KEYCODE_BACK  == keyCode){    //如果你点击的是返回键
+ 			         //提示你在点一下，才退出程序
+ 			  Toast.makeText(getApplicationContext(), "确定退出吗", 0).show();
+ 			  count ++ ;
+ 			  return false;
+ 			  }
+        return super.onKeyUp(keyCode, event);
+ 	}
 	
 }

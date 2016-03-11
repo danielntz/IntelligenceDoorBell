@@ -2,69 +2,78 @@ package com.example.allinformation;
 
 public class Person  {
       
-	private String tel;
-	private String yanzhengma;
-	private String nickname;
-	private String password;
-	private String confirmpassword;
+	private String userName;     //用户所填手机号
+	private String deviceId;                //设备编号
+	private String userNick;              //用户昵称
+	private String userPass;            //用户所填的密码
+	private String  userConpass;     //用户确认密码
 	
-	public Person(){
+	
+	public Person(String userName, String deviceId, String userNick,
+			String userPass, String userConpass) {
 		
+		this.userName = userName;
+		this.deviceId = deviceId;
+		this.userNick = userNick;
+		this.userPass = userPass;
+		this.userConpass = userConpass;
+	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	public String getDeviceId() {
+		return deviceId;
+	}
+
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
+
+
+	public String getUserNick() {
+		return userNick;
+	}
+
+
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
+	}
+
+
+	public String getUserPass() {
+		return userPass;
+	}
+
+
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
+	}
+
+
+	public String getUserConpass() {
+		return userConpass;
+	}
+
+
+	public void setUserConpass(String userConpass) {
+		this.userConpass = userConpass;
 	}
 	
-	public 	Person(String tel,String yanzhengma,String nickname,String password,String confirmpassword){
-		super();
-		this.tel = tel;
-		this.yanzhengma = yanzhengma;
-		this.nickname = nickname;
-		this.password = password;
-		this.confirmpassword = confirmpassword;
-	}
-
-	public String getTel() {
-		return tel;
-	}
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-	public String getYanzhengma() {
-		return yanzhengma;
-	}
-
-	public void setYanzhengma(String yanzhengma) {
-		this.yanzhengma = yanzhengma;
-	}
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getConfirmpassword() {
-		return confirmpassword;
-	}
-
-	public void setConfirmpassword(String confirmpassword) {
-		this.confirmpassword = confirmpassword;
-	}
 	
-	public String toString(){
+	//public String toString(){
           
-		return "[tel="+tel+",yanzheng="+yanzhengma+",nickname="+nickname+",password="+password+",confirmpassword="+confirmpassword+"]";
-	}
+	//	return "[tel="+tel+",yanzheng="+yanzhengma+",nickname="+nickname+",password="+password+",confirmpassword="+confirmpassword+"]";
+	//}
 	
 	
 	

@@ -17,6 +17,7 @@ import com.example.uiproject.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.zxing.activity.CaptureActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -44,6 +45,7 @@ public class register  extends Activity implements OnClickListener{
 	  private TextView    ok;
 	  private Person    changeperson;   //获得数值的person
 	  private String   msg;             //json结构的字符串
+	  private  Button   sao ;         //二维码扫描按钮
 	
 	
 	@Override
@@ -51,29 +53,37 @@ public class register  extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_layout);
-		switchphoto = (Button)findViewById(R.id.switchphoto);
+		//switchphoto = (Button)findViewById(R.id.switchphoto);
 		fanhuijiemian = (ImageButton)findViewById(R.id.fanhui);
-		tel0 = (EditText)findViewById(R.id.tel);
+       tel0 = (EditText)findViewById(R.id.tel);
 		yanzheng0 = (EditText)findViewById(R.id.yanzheng);
 		nickname0 = (EditText)findViewById(R.id.nickname);
 		password0  = (EditText)findViewById(R.id.newpass);
 		confirmword0 = (EditText)findViewById(R.id.confimpass);
+		sao =(Button) findViewById(R.id.saoyisao);
         ok = (TextView)findViewById(R.id.ok);
-		switchphoto.setOnClickListener(this);
+	//	switchphoto.setOnClickListener(this);
 		fanhuijiemian.setOnClickListener(this);
 		ok.setOnClickListener(this);
+		sao.setOnClickListener(this);
 		
 	}
 
-
+        
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.switchphoto:
+	/*	case R.id.switchphoto:
 			 switchphoto.setBackgroundResource(R.drawable.yanzhengma);
-			 break;
+			 break;*/
+		case R.id.saoyisao:
+		     	Toast.makeText(getApplicationContext(), "开始扫描", 0).show();
+			   Intent  intent = new Intent(getApplicationContext(),CaptureActivity.class);
+		     	//	 startActivity(intent);	
+		    	startActivityForResult(intent	, 0);
+		    	break;  
 		case R.id.fanhui :
 			 //结束当前的activity
 			 finish();
@@ -94,16 +104,19 @@ public class register  extends Activity implements OnClickListener{
 				       registerfunction.geteditinformation(nickname0), 
 				       registerfunction.geteditinformation(password0), 
 				       registerfunction.geteditinformation(confirmword0));
+		  // Log.i(TAG, changeperson.getDeviceId());
+		   
 		//构造json字符串
 			 try {
-				msg = jsontools.createjsonstring("person", changeperson);
+				msg = jsontools.createjsonzhuce(changeperson);
+				Log.i(TAG, msg);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			 Log.i(TAG,msg);
+			} 
+		
 			 //传输json字符串采用AsyncHttpClient异步框架
-			 AsyncHttpClient client1  = new AsyncHttpClient();
+		/*	 AsyncHttpClient client1  = new AsyncHttpClient();
 			 String path1 = "http://192.168.1.111:8080/IntelligenceDoorBellWeb/chuanshu";
 			 RequestParams params  = new RequestParams();
 			 params.add("jsonstring", msg);
@@ -124,7 +137,7 @@ public class register  extends Activity implements OnClickListener{
 					// TODO Auto-generated method stub
 					Toast.makeText(register.this, new String(responseBody), 0).show();
 				}
-				}) ;
+				}) ; */
 		     break;
 		/**
 		 * 其它
@@ -135,6 +148,15 @@ public class register  extends Activity implements OnClickListener{
 		
 	}
       
-	
+	  @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode == RESULT_OK){
+			String result = data.getExtras().getString("result");
+			yanzheng0.setText(result);
+		}
+		
+	}
 	
 }
