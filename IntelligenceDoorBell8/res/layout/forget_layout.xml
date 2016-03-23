@@ -83,7 +83,7 @@
                 android:layout_marginTop="6.0dip"
                 android:text="验 证 码:"/>
          <EditText   
-                   android:id="@+id/nickname"
+                   android:id="@+id/checkma"
                    android:layout_width="50dip"
                
                    android:maxLength="6"

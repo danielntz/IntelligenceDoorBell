@@ -258,7 +258,7 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
 		public void run() {
 			// TODO Auto-generated method stub
 			            Vibrator   vibrator = (Vibrator)getSystemService(Service.VIBRATOR_SERVICE);  //获得震动服务
-	                    while(true){
+	                 
 	                    	//用来监听从服务器发过来的信息数据
 	                     //获得对应的数据后，震动且弹出选择功能界面
 	                    	//是否获得了相应的提示信息
@@ -277,7 +277,7 @@ public class mainactivity extends  SlidingFragmentActivity    implements OnClick
 						e.printStackTrace();
 					}
 	                }
-	                    }
+	                    
 	}
 	
    

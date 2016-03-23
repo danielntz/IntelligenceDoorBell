@@ -8,6 +8,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.loopj.android.http.HttpGet;
 
 /**
@@ -40,4 +43,26 @@ public class httpUtils {
 		    	  return null;
 		      }
 	  }
+	  
+	  //连接服务器，获得服务器返回的流，对流进行处理，获得图片
+	  public  static Bitmap httpgetphoto(String path) throws  IOException
+	   {
+		   HttpClient client = new DefaultHttpClient();
+		   HttpGet httpget = new HttpGet(path);
+		   @SuppressWarnings("deprecation")
+		HttpResponse response = client.execute(httpget);
+		   int code;
+		   code = response.getStatusLine().getStatusCode();
+		   if(code == 200)
+		   {
+			   InputStream is = response.getEntity().getContent();
+			   Bitmap bitmap = BitmapFactory.decodeStream(is);
+			   return bitmap;
+		   }
+		   else
+		   {
+			   return null;
+		   }
+		   
+	   }
 }

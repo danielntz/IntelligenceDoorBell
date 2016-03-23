@@ -93,7 +93,7 @@ public class register  extends Activity implements OnClickListener{
 			 if(TextUtils.isEmpty(tel0.getText()) || TextUtils.isEmpty(yanzheng0.getText()) ||TextUtils.isEmpty(nickname0.getText())
 					  ||TextUtils.isEmpty(password0.getText()) ||TextUtils.isEmpty(confirmword0.getText()))
 			 {
-				 Toast.makeText(register.this, "有空项，请填写", 0).show();;
+				 Toast.makeText(register.this, "有空项，请填写", 0).show();
 				 
 			 }
 			
@@ -106,6 +106,12 @@ public class register  extends Activity implements OnClickListener{
 				       registerfunction.geteditinformation(confirmword0));
 		  // Log.i(TAG, changeperson.getDeviceId());
 		   
+			if( !(password0.getText().toString().equals(confirmword0.getText().toString()))){
+				Log.i(TAG, password0.getText().toString());
+				Log.i(TAG, confirmword0.getText().toString());
+				Toast.makeText(getApplicationContext(), "确认密码错误,请重输", 0).show();
+			}
+			else{
 		//构造json字符串
 			 try {
 				msg = jsontools.createjsonzhuce(changeperson);
@@ -116,18 +122,20 @@ public class register  extends Activity implements OnClickListener{
 			} 
 		
 			 //传输json字符串采用AsyncHttpClient异步框架
-		/*	 AsyncHttpClient client1  = new AsyncHttpClient();
-			 String path1 = "http://192.168.1.111:8080/IntelligenceDoorBellWeb/chuanshu";
+			 AsyncHttpClient client1  = new AsyncHttpClient();
+			 String path1 = "http://219.244.48.159:8080/WeChat/registerSmartDogAction.action";
 			 RequestParams params  = new RequestParams();
-			 params.add("jsonstring", msg);
+			 params.add("register", msg);
 			 client1.post(path1, params,  new AsyncHttpResponseHandler(){
 
 				@Override
 				public void onSuccess(int statusCode, Header[] headers,
 						byte[] responseBody) {
 					// TODO Auto-generated method stub
+					//String returninfo = responseBody.toString();
+				//	String  jiequinfo = returninfo.substring(0,3);
 					
-					Toast.makeText(register.this,new String(responseBody) , 0).show();
+					Toast.makeText(register.this,new String(responseBody).substring(8, 12) , 0).show();
 					
 				}
               //responsBody 是服务器返回的内容
@@ -137,12 +145,13 @@ public class register  extends Activity implements OnClickListener{
 					// TODO Auto-generated method stub
 					Toast.makeText(register.this, new String(responseBody), 0).show();
 				}
-				}) ; */
+				}) ; 
 		     break;
 		/**
 		 * 其它
 		 */
 		} 
+		}
 		}
 	
 		

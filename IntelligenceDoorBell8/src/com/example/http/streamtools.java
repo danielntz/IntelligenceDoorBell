@@ -11,6 +11,7 @@ import java.io.InputStream;
 public class streamtools    {
     
 	 public static String readInputStream(InputStream is){
+	  //ByteArrayOutputStream 可以获得缓冲区的内容，并转化我字节数组
 		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		 int len = 0;
 		 byte[] buffer = new byte[1024];

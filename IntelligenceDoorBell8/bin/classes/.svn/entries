@@ -2,7 +2,7 @@
 
 dir
 19
-https://lenovo-pc/svn/IntelligenceDoorBell/IntelligenceDoorBell6/bin/classes
+https://lenovo-pc/svn/IntelligenceDoorBell/IntelligenceDoorBell6/src
 https://lenovo-pc/svn/IntelligenceDoorBell
 
 
@@ -25,4 +25,7 @@ danieljet
 
 
 b2d533ce-6c7e-8f44-9fb8-49dbd06dcee5
+
+com
+dir
 

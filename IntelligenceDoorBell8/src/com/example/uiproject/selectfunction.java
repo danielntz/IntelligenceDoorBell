@@ -1,6 +1,7 @@
 package com.example.uiproject;
 
 import com.example.allinformation.biaoshi;
+import com.example.http.httpUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class selectfunction  extends Activity implements OnClickListener{
 			case R.id.take_photo:
 				      biaoshi.flag = true;
 				      finish();
+				  //      httpUtils.httpgetphoto(path);
 				break;
 			case    R.id.real_talk:
 				biaoshi.flag = true;

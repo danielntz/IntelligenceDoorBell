@@ -1,6 +1,8 @@
 package com.example.jsontools;
 
 import com.example.allinformation.Person;
+import com.example.allinformation.enter;
+import com.example.allinformation.forgetinfo;
 
 public class jsonservice {
      
@@ -14,5 +16,17 @@ public class jsonservice {
 		return person;
 	}
 	
+	public   static    enter  getenterinfo(String userName	 , String  userPass){
+		  
+		     enter  enterinfo    = new  enter(userName, userPass);
+		     return  enterinfo;
+		
+	}
+	
+	public  static   forgetinfo  getforget(String phone ,String checkma ){
+		     
+		      forgetinfo forget = new forgetinfo(phone, checkma);
+		  return      forget;
+	}
 	
 }
