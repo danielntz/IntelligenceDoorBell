@@ -43,10 +43,7 @@ public class MainActivity extends Activity  implements OnClickListener{
 	 private  EditText  mima;
 	 private    enter    huodeinfo;
 	 private  String msg;
-	 private  ImageView  view; 
-	 private  String  result = new String("v");     //不能为空字符
-	 private    boolean   judge   = true;      //判断是有空项还是用户名或密码错误
-	
+	 private  ImageView  view;
 	
 	
 	@Override
@@ -79,13 +76,11 @@ public class MainActivity extends Activity  implements OnClickListener{
 		     
 	//	  huodeinfo = new enter(zhanghao.getText().toString(), mima.getText().toString());
 		  if(TextUtils.isEmpty(zhanghao.getText()) || TextUtils.isEmpty(mima.getText())){
-			  
-			   judge = false;
-			  Toast.makeText(getApplicationContext(), "有空项,请填写完整", 0).show();
+			     Toast.makeText(getApplicationContext(), "有空项,请填写完整", 0).show();
 			    
 		  }
 		  else{
-			   judge = true;
+			 
 			  huodeinfo =  jsonservice.getenterinfo(registerfunction.geteditinformation(zhanghao), registerfunction.geteditinformation(mima));
 				msg = jsontools.createjsondenglu(huodeinfo);
 				 //传输json字符串采用AsyncHttpClient异步框架
@@ -100,11 +95,12 @@ public class MainActivity extends Activity  implements OnClickListener{
 					public void onSuccess(int statusCode, Header[] headers,
 							byte[] responseBody) {
 				  String data = new String(responseBody);
-				  result =  data;
 					Toast.makeText(MainActivity.this, data.substring(data.indexOf(":") + 2 , data.indexOf("}") -1) ,0).show();
 				  //  Toast.makeText(getApplicationContext(), content.getUserNick(), 0).show();
 					   
-				
+					Intent intent2 = new Intent(MainActivity.this,mainactivity.class);
+					 startActivity(intent2);
+						 finish();
 						
 					}
 	              //responsBody 是服务器返回的内容
@@ -112,8 +108,7 @@ public class MainActivity extends Activity  implements OnClickListener{
 					public void onFailure(int statusCode, Header[] headers,
 							byte[] responseBody, Throwable error) {
 						// TODO Auto-generated method stub
-						result = new String(responseBody);
-					//	Toast.makeText(MainActivity.this, new String(responseBody), 0).show();
+						Toast.makeText(MainActivity.this, new String(responseBody), 0).show();
 					}
 					}) ; 
 			
@@ -138,22 +133,11 @@ public class MainActivity extends Activity  implements OnClickListener{
 		
 			 //向服务器发送数据，采用AsynHttpClient
 			 try {
-				      huoqu();
-				    if(judge){
-				        if(result.equals("fail") || result.equals("v") ){
-				    	     Toast.makeText(getApplicationContext(), "用户名或密码错误,请重新输入", 0).show();
-				    }
-				    else{   //用户密码正确，进入程序
-					   Intent intent2 = new Intent(MainActivity.this,mainactivity.class);
-				    	 startActivity(intent2);
-					 	 finish();
-				    }
-		     }
+				    huoqu();
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
 		  break;
 		
 		

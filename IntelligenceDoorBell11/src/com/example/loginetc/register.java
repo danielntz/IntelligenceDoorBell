@@ -93,7 +93,7 @@ public class register  extends Activity implements OnClickListener{
 			 if(TextUtils.isEmpty(tel0.getText()) || TextUtils.isEmpty(yanzheng0.getText()) ||TextUtils.isEmpty(nickname0.getText())
 					  ||TextUtils.isEmpty(password0.getText()) ||TextUtils.isEmpty(confirmword0.getText()))
 			 {
-				 Toast.makeText(register.this, "有空项，请填写", 0).show();
+				 Toast.makeText(register.this, "有空项，请填写", 0).show();;
 				 
 			 }
 			
@@ -106,12 +106,6 @@ public class register  extends Activity implements OnClickListener{
 				       registerfunction.geteditinformation(confirmword0));
 		  // Log.i(TAG, changeperson.getDeviceId());
 		   
-			if( !(password0.getText().toString().equals(confirmword0.getText().toString()))){
-				Log.i(TAG, password0.getText().toString());
-				Log.i(TAG, confirmword0.getText().toString());
-				Toast.makeText(getApplicationContext(), "确认密码错误,请重输", 0).show();
-			}
-			else{
 		//构造json字符串
 			 try {
 				msg = jsontools.createjsonzhuce(changeperson);
@@ -151,7 +145,6 @@ public class register  extends Activity implements OnClickListener{
 		 * 其它
 		 */
 		} 
-		}
 		}
 	
 		

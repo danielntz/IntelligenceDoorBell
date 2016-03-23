@@ -55,7 +55,7 @@ public class jsontools {
 	    	   JSONObject  jsonobject =new JSONObject();
 	    	   JSONArray  array  = new JSONArray();
 	    	   JSONObject   findinfo = new JSONObject();
-	    	   findinfo.put("phone", info.getPhone());
+	    	   findinfo.put("Phone", info.getPhone());
 	    	   findinfo.put("checkma", info.getCheckma());
 	    	   array.put(findinfo);
 	    	   jsonobject.put("Data", array);

@@ -3,12 +3,10 @@ package com.example.loginetc;
 
 
 import org.apache.http.Header;
-import org.json.JSONException;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,9 +15,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.allinformation.forgetinfo;
-import com.example.functiontools.registerfunction;
-import com.example.jsontools.jsontools;
 import com.example.uiproject.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -31,15 +26,13 @@ import com.loopj.android.http.RequestParams;
 	       
 public class forget  extends Activity implements OnClickListener{
     
-	   private static final String TAG = null;
-	private ImageButton fanhuijiemian;   //返回按钮
+	   private ImageButton fanhuijiemian;   //返回按钮
 	   private   Button   getcode;     //验证码
 	   private    TextView  ok  ;       //确定
 	   private     EditText    tel;   //手机号码
 	   private  EditText    checkma  ;   //验证码
 	   private  String   telephone ;
 	   private  String messagema;
-	   private   String msg;  //封装的字符串
 	   
 	  
 	@Override
@@ -73,38 +66,7 @@ public class forget  extends Activity implements OnClickListener{
 				         Toast.makeText(getApplicationContext(), "有空项,请填完整",0).show();
 			   }
 			   else{
-				       //   telephone = tel.getText().toString();
-				        //  messagema = checkma.getText().toString();
-				          //封装json字符串
-				    forgetinfo   findmima = new forgetinfo(registerfunction.geteditinformation(tel), registerfunction.geteditinformation(checkma)) ;
-				    try {
-						msg = jsontools.createjsonfind(findmima);
-						Log.i(TAG, msg);
-						AsyncHttpClient   client = new AsyncHttpClient();
-						String path1 = "";
-						RequestParams   params = new RequestParams();
-						params.add("find", msg);
-						client.post(path1, params,new AsyncHttpResponseHandler() {
-							
-							@Override
-							public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-							@Override
-							public void onFailure(int statusCode, Header[] headers,
-									byte[] responseBody, Throwable error) {
-								// TODO Auto-generated method stub
-								
-							}
-						});
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				    
-				          
+				   
 			   }
 			      break;
 		case  R.id.getCode:
