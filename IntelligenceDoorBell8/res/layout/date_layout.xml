@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      
+   <SurfaceView   
+                android:id="@+id/monitor"
+                android:layout_marginTop="15.0dip"
+                android:layout_width="500.0dip"
+                android:layout_height="300.0dip"/>
+   
+                           >
+     <RelativeLayout  
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"  >
+        
+         <LinearLayout 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"  
+               android:layout_marginTop="13.0dip" 
+               >
+             <Button    
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/stopvedio"
+            android:layout_marginLeft="130.0dip"
+             android:background="@drawable/stop"
+             android:visibility="gone" />
+         </LinearLayout>
+         
+         <LinearLayout 
+              android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"  
+               android:layout_marginTop="13.0dip"
+               
+              >
+             <Button  
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/stopsound"
+             android:background="@drawable/stop1"
+             android:layout_marginLeft="130.0dip"
+             android:visibility="gone" />
+             
+         </LinearLayout>
+         
+    
+    
+   <LinearLayout    
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"  
+               android:layout_marginTop="8.0dip" >
+               
+       <Button   
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               
+               android:id="@+id/paizhao"
+               android:background="@drawable/paizhao"/>
+       <Button    
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" 
+              android:layout_marginLeft="-15.0dip"
+               android:id="@+id/luxiang"
+               android:background="@drawable/luxiang"  />
+       <Button   
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" 
+               android:id="@+id/luyin"
+               android:background="@drawable/duijiang"  />
+       
+    </LinearLayout>
+     </RelativeLayout>  
+     
+     
+   
+</LinearLayout>

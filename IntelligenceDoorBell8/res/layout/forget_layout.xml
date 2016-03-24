@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+      
+            <RelativeLayout
+               android:layout_width="500.0dip"
+               android:layout_height="50.0dip"
+               android:background="@drawable/title" >
+    
+            <ImageButton     
+                      android:id="@+id/fanhui"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="13.0dip"
+                      android:layout_marginTop="10.0dip"
+                      android:background="@drawable/back"/>
+             <TextView    
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20.0sp"
+                android:layout_marginLeft="116.0dip"
+                android:layout_marginTop="13.0dip"              
+                android:text="找回密码"
+                android:textColor="#FFFFFFFF"/>  
+         <TextView   
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                 android:textSize="13.0sp"
+                 android:id="@+id/forgetmima"
+                 android:text="确定"
+                 android:textColor="#FFFFFFFF"  
+                 android:layout_marginLeft="260.0dip"
+                 android:layout_marginTop="17.5dip"/>   
+    </RelativeLayout>
+    
+     <LinearLayout  
+               android:layout_width="290.0dip"
+               android:layout_height="45.0dip"
+               android:layout_marginTop="25.0dip"
+               android:layout_marginLeft="15.0dip"
+               android:orientation="horizontal"
+               android:background="@drawable/whitebackground">
+         <TextView   
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="15.0dip"
+                android:layout_marginTop="6.5dip"
+               
+               android:text="手机号 :"/>
+         <EditText   
+                   android:id="@+id/tel"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8.0dip"
+                   android:layout_marginTop="6.0dip"
+                   android:textSize="20sp"
+                   android:singleLine="true"
+                   android:inputType="phone"
+                   android:background="@null"
+                   
+                   android:hint="必填" />
+      </LinearLayout>
+      
+     <ImageView    
+            android:layout_width="290.0dip"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="15.0dip"
+               android:background="@drawable/buttonangang"    />
+       <LinearLayout   
+               android:layout_width="290.0dip"
+               android:layout_height="45.0dip"
+               android:orientation="horizontal"
+               android:layout_marginLeft="15.0dip"
+               android:background="@drawable/whitebackground" >
+        <TextView   
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="13.0dip"
+                android:layout_marginTop="6.0dip"
+                android:text="验 证 码:"/>
+         <EditText   
+                   android:id="@+id/checkma"
+                   android:layout_width="50dip"
+               
+                   android:maxLength="6"
+                   
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8.0dip"
+                   android:layout_marginTop="6.0dip"
+                   android:singleLine="true"
+                   android:background="@null"
+                   android:inputType="number"
+                   android:textSize="20.0sp"
+                   android:hint="必填" />  
+        <RelativeLayout  
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true">       
+         <Button   
+                           android:id="@+id/getCode"
+                         
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                          android:layout_marginLeft="80dip"
+                           android:text="验证码"
+                           android:textSize="20sp"
+                      
+                           android:textColor="#FFFFFFFF"
+                           android:background="@drawable/orange"/>
+         </RelativeLayout>    
+       </LinearLayout>         
+       
+</LinearLayout>
