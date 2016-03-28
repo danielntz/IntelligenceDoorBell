@@ -8,6 +8,7 @@ import org.apache.http.Header;
 import org.json.JSONException;
 
 import com.example.allinformation.Person;
+import com.example.allinformation.biaoshi;
 import com.example.functiontools.registerfunction;
 import com.example.http.httpservice;
 import com.example.http.streamtools;
@@ -46,7 +47,7 @@ public class register  extends Activity implements OnClickListener{
 	  private Person    changeperson;   //获得数值的person
 	  private String   msg;             //json结构的字符串
 	  private  Button   sao ;         //二维码扫描按钮
-	
+	//  private   String    deviceId;   //获得的设备编号
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +105,10 @@ public class register  extends Activity implements OnClickListener{
 				       registerfunction.geteditinformation(nickname0), 
 				       registerfunction.geteditinformation(password0), 
 				       registerfunction.geteditinformation(confirmword0));
+			
+			  biaoshi.setDeviceId(registerfunction.geteditinformation(yanzheng0).toString());
 		  // Log.i(TAG, changeperson.getDeviceId());
-		   
+		   //  Log.i(TAG, biaoshi.getDeviceId());
 			if( !(password0.getText().toString().equals(confirmword0.getText().toString()))){
 				Log.i(TAG, password0.getText().toString());
 				Log.i(TAG, confirmword0.getText().toString());
@@ -164,6 +167,8 @@ public class register  extends Activity implements OnClickListener{
 		if(resultCode == RESULT_OK){
 			String result = data.getExtras().getString("result");
 			yanzheng0.setText(result);
+			
+			
 		}
 		
 	}

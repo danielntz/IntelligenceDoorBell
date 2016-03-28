@@ -1,64 +1,0 @@
-10
-
-dir
-19
-https://lenovo-pc/svn/IntelligenceDoorBell/IntelligenceDoorBell6/res
-https://lenovo-pc/svn/IntelligenceDoorBell
-
-
-
-2015-09-23T11:39:34.201553Z
-19
-danieljet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-b2d533ce-6c7e-8f44-9fb8-49dbd06dcee5
-
-values
-dir
-
-drawable
-dir
-
-values-w820dp
-dir
-
-drawable-hdpi
-dir
-
-drawable-xxhdpi
-dir
-
-menu
-dir
-
-values-v11
-dir
-
-drawable-ldpi
-dir
-
-values-v14
-dir
-
-drawable-mdpi
-dir
-
-drawable-xhdpi
-dir
-
-layout
-dir
-

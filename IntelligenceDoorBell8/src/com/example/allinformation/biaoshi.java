@@ -9,8 +9,24 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
  */
 public class biaoshi {
                   
+           private   static   String  deviceId;    //设备编号
 	       private static   SlidingMenu    sm;
-	       private  static   int   i;
+	       private    static    String urlphoto;    //图片的信息
+	       
+	       
+	       public static String getUrlphoto() {
+			return urlphoto;
+		}
+		public static void setUrlphoto(String urlphoto) {
+			biaoshi.urlphoto = urlphoto;
+		}
+		public static String getDeviceId() {
+			return deviceId;
+		}
+		public static void setDeviceId(String deviceId) {
+			biaoshi.deviceId = deviceId;
+		}
+		private  static   int   i;
 	    public static  SlidingMenu getSm() {
 			return sm;
 		}

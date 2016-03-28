@@ -89,7 +89,10 @@ public class forget  extends Activity implements OnClickListener{
 							@Override
 							public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 								// TODO Auto-generated method stub
-								           Toast.makeText(getApplicationContext(), new String(responseBody), 0).show();
+								String data  = new String(responseBody);
+								data = data.substring(8, 15);
+								if(data.equals("success"))
+						       Toast.makeText(getApplicationContext(), "密码也发送至您的手机", 0).show();
 							}
 							
 							@Override
@@ -98,7 +101,8 @@ public class forget  extends Activity implements OnClickListener{
 								// TODO Auto-generated method stub
 						        String  data = new String(responseBody);
 						         data = data.substring(8, 12);
-						         Toast.makeText(getApplicationContext(), data, 0).show();  
+						         if(data.equals("fail"))
+						         Toast.makeText(getApplicationContext(), "密码发送失败", 0).show();  
 							}
 						});
 					} catch (JSONException e) {

@@ -5,7 +5,10 @@ import java.io.IOException;
 import org.apache.http.Header;
 
 import android.graphics.Bitmap;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.example.allinformation.biaoshi;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -16,34 +19,45 @@ import com.loopj.android.http.RequestParams;
 public class Asynhttp {
    
 	   
-	       public   Asynhttp(){
+	       protected static final String TAG = null;
+            private    String   photopath;
+		
+          
+          public   Asynhttp(){
 	    	   
 	       }
 	
 	     //向服务器发送消息，告知服务器我要拍照
 	
-	    public   static     Bitmap     transitphoto(String path) throws IOException{
+	    public     void     transitphoto(String path) throws IOException{
 	    	   //获取图片在服务器上的地址
-	    	    Bitmap    bitmap ;
 	    	   AsyncHttpClient   client = new AsyncHttpClient();
 	    	   RequestParams  params = new RequestParams();
-	    	   params.add("photo", "give me photo");
-	    	   client.post(path, params , new AsyncHttpResponseHandler() {
+	   //	   params.add("fileType", "photo_" +biaoshi.getDeviceId());
+	    	    params.add("fileType", "photo_" + "201508");
+	    	//   Log.i(TAG, params.toString());
+	  	   client.post(path, params , new AsyncHttpResponseHandler() {
 				@Override
 				public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 					// TODO Auto-generated method stub
 					        //返回的是图片的地址
+				        String  photo = new String(responseBody);
+				        photopath =  photo.substring(photo.indexOf(":") + 2 , photo.indexOf("}") -1);
+				        Log.i(TAG, photopath);
+				    		        
 				}
 				@Override
 				public void onFailure(int statusCode, Header[] headers,
 						byte[] responseBody, Throwable error) {
 					// TODO Auto-generated method stub
-					
+				       String  photo = new String(responseBody);
+				       photopath = "获取失败";
+				         
 				}
 			});
-	    	   //拿到图片的地址后，现在在移动端显示出
-	    	   bitmap  = httpUtils.httpgetphoto(path);
-	    	   return bitmap;
+	    
+	  	   
+	    	    
 	    }
 	       
 	    //向服务器发送消息，告知服务器我要查看语音
@@ -62,7 +76,7 @@ public class Asynhttp {
 				public void onFailure(int statusCode, Header[] headers,
 						byte[] responseBody, Throwable error) {
 					// TODO Auto-generated method stub
-					
+					  
 				}
 			});
 	    	   //拿到音频的地址后，在移动端播放
@@ -80,7 +94,7 @@ public class Asynhttp {
 				@Override
 				public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 					// TODO Auto-generated method stub
-					
+					   
 				}
 				
 				@Override

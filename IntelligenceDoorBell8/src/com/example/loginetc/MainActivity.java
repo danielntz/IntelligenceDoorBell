@@ -102,7 +102,7 @@ public class MainActivity extends Activity  implements OnClickListener{
 					Toast.makeText(MainActivity.this, data.substring(data.indexOf(":") + 2 , data.indexOf("}") -1) ,0).show();
 				  //  Toast.makeText(getApplicationContext(), content.getUserNick(), 0).show();
 					   
-				
+				   
 						
 					}
 	              //responsBody 是服务器返回的内容
@@ -135,25 +135,27 @@ public class MainActivity extends Activity  implements OnClickListener{
 	     	case R.id.enter:
 		
 			 //向服务器发送数据，采用AsynHttpClient
-		/*	 try {
+			 try {
 				      huoqu();
-				    if(judge){
-				        if(result.equals("fail") || result.equals("v") ){
+				    if(judge)
+				    {
+				          if(result.equals("fail")  || result.equals("error") )
+				          {
 				    	     Toast.makeText(getApplicationContext(), "用户名或密码错误,请重新输入", 0).show();
-				    }
-				    else{   //用户密码正确，进入程序
+				         }
+				       else{   //用户密码正确，进入程序
 					   Intent intent2 = new Intent(MainActivity.this,mainactivity.class);
 				    	 startActivity(intent2);
 					 	 finish();
-				    }
+				       }
 		     }
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}*/
-	     		Intent  intent2 = new Intent(MainActivity.this,mainactivity.class);
-	     		startActivity(intent2);
-	     		finish();
+			}
+	     	//	Intent  intent2 = new Intent(MainActivity.this,mainactivity.class);
+	     //		startActivity(intent2);
+	    // 		finish();
 		
 		  break;
 		
