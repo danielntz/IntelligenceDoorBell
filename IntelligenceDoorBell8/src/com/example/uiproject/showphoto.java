@@ -33,9 +33,8 @@ public class showphoto   extends Activity{
 	    	requestWindowFeature(Window.FEATURE_NO_TITLE);    //全屏
 	    	setContentView(R.layout.photo);
 	       showphoto  = (SmartImageView)findViewById(R.id.photo);
-	       showphoto.setImageUrl("http://www.keplerstudios.com//Kevin//xust//xustTest.jpg", R.drawable.abc_ab_bottom_solid_light_holo, R.drawable.abc_ab_bottom_transparent_light_holo);
-	       //	new Thread(new check()).start();
-	   // 	 initfunction();                             //向服务器发送消息，并且显示在手机上
+	
+	     	 initfunction();                             //向服务器发送消息，并且显示在手机上
 	       
 		    }
 	    
@@ -45,7 +44,7 @@ public class showphoto   extends Activity{
 		 try {
 		   	String path = "http://219.244.48.159:8080/WeChat/sendPhotoSmartDogAction.action";
 			//	bitmap =      Asynhttp.transitphoto(path);
-		  transitphoto(path);
+		    transitphoto(path);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -53,15 +52,14 @@ public class showphoto   extends Activity{
 		
 		 
 	 }
-	 
-	    
+	  
 	 
 	 public     void     transitphoto(String path) throws IOException{
   	   //获取图片在服务器上的地址
   	   AsyncHttpClient   client = new AsyncHttpClient();
   	   RequestParams  params = new RequestParams();
- //	   params.add("fileType", "photo_" +biaoshi.getDeviceId());
-  	    params.add("fileType", "photo_" + "201508");
+ 	 //  params.add("fileType", "photo_" +biaoshi.getDeviceId());
+  	   params.add("fileType", "photo_" + "201508");      //测试当前绑定的设备
   	//   Log.i(TAG, params.toString());
 	   client.post(path, params , new AsyncHttpResponseHandler() {
 			@Override
@@ -70,51 +68,27 @@ public class showphoto   extends Activity{
 				        //返回的是图片的地址
 			        String  photo = new String(responseBody);
 			        photopath =  photo.substring(photo.indexOf(":") + 2 , photo.indexOf("}") -1);
+			      //  Log.i(TAG, photopath);
+			        photopath =photopath.replace("\\", "");     //把斜杠取消掉，java中斜杠不能单一写
 			        Log.i(TAG, photopath);
-			        try {
-						   bitmap  = httpUtils.httpgetphoto("http://www.keplerstudios.com//Kevin//xust//xustTest.jpg");
-							showphoto.setImageBitmap(bitmap);
-			        } catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-			    	
+			        showphoto.setImageUrl(photopath, R.drawable.abc_ab_share_pack_mtrl_alpha, R.drawable.abc_action_bar_item_background_material);
+			        
 			}
 			@Override
 			public void onFailure(int statusCode, Header[] headers,
 					byte[] responseBody, Throwable error) {
 				// TODO Auto-generated method stub
 			       String  photo = new String(responseBody);
-			       photopath = "获取失败";
-			         
+			       photopath = "获取失败";         
 			}
 		});    
   }
 	 
-	 public  class  check  implements Runnable{
-
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			  runOnUiThread(new Runnable() {
-				
-				@Override
-				public void run() {
-					// TODO Auto-generated method stub
-					try {
-						bitmap  = httpUtils.httpgetphoto("http://www.keplerstudios.com//Kevin//xust//xustTest.jpg");
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					showphoto.setImageBitmap(bitmap);
-				}
-			});
-		}
+	
 		 
 	 }
 	 
 	
-}
+
 
   

@@ -3,6 +3,7 @@ package com.example.uiproject;
 import java.io.IOException;
 import java.util.zip.DataFormatException;
 
+import com.example.functiontools.adjustscreen;
 import com.example.functiontools.datefragmentfunction;
 import com.example.uiassist.disappearshowui;
 
@@ -23,7 +24,8 @@ public class dateFragement   extends Fragment implements OnClickListener{
 	    private Button talk;
 	    private Button stopvedio;
 	    private Button stopsound;
-	    private SurfaceView surfaceview;
+	 //   private SurfaceView surfaceview;
+	    private  adjustscreen   videoview;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,7 +37,7 @@ public class dateFragement   extends Fragment implements OnClickListener{
 		luzhivideo = (Button) datefragement.findViewById(R.id.luxiang);
 		takephoto = (Button) datefragement.findViewById(R.id.paizhao);
 		talk = (Button)datefragement.findViewById(R.id.luyin);
-		surfaceview = (SurfaceView)datefragement.findViewById(R.id.monitor);
+		videoview = (adjustscreen)datefragement.findViewById(R.id.monitor);
 		stopvedio = (Button)datefragement.findViewById(R.id.stopvedio);
 		stopsound = (Button)datefragement.findViewById(R.id.stopsound);
 		takephoto.setOnClickListener(this);
@@ -58,7 +60,7 @@ public class dateFragement   extends Fragment implements OnClickListener{
 			 disappearshowui.show(stopvedio);
 			 try {
 				    
-				    datefragmentfunction.startluxiang(surfaceview);
+				    datefragmentfunction.startluxiang(videoview);
 				    Toast.makeText(getActivity(), "开始录制视频", 0).show();
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block

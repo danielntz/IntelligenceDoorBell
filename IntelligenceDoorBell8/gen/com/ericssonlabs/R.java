@@ -37,34 +37,34 @@ public final class R {
 		public static final int viewfinder_mask = 0x7f060018;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020069;
-		public static final int navbar = 0x7f020070;
+		public static final int ic_launcher = 0x7f020058;
+		public static final int navbar = 0x7f02005f;
 	}
 	public static final class id {
 		public static final int auto_focus = 0x7f070000;
-		public static final int btn_add_qrcode = 0x7f07006f;
-		public static final int btn_cancel_scan = 0x7f07005c;
-		public static final int btn_scan_barcode = 0x7f07006c;
+		public static final int btn_add_qrcode = 0x7f070083;
+		public static final int btn_cancel_scan = 0x7f070070;
+		public static final int btn_scan_barcode = 0x7f070080;
 		public static final int decode = 0x7f070001;
 		public static final int decode_failed = 0x7f070002;
 		public static final int decode_succeeded = 0x7f070003;
 		public static final int encode_failed = 0x7f070004;
 		public static final int encode_succeeded = 0x7f070005;
-		public static final int et_qr_string = 0x7f07006e;
-		public static final int iv_qr_image = 0x7f070070;
+		public static final int et_qr_string = 0x7f070082;
+		public static final int iv_qr_image = 0x7f070084;
 		public static final int launch_product_query = 0x7f070006;
-		public static final int preview_view = 0x7f07005a;
+		public static final int preview_view = 0x7f07006e;
 		public static final int quit = 0x7f070007;
 		public static final int restart_preview = 0x7f070008;
 		public static final int return_scan_result = 0x7f070009;
 		public static final int search_book_contents_failed = 0x7f07000a;
 		public static final int search_book_contents_succeeded = 0x7f07000b;
-		public static final int tv_scan_result = 0x7f07006d;
-		public static final int viewfinder_view = 0x7f07005b;
+		public static final int tv_scan_result = 0x7f070081;
+		public static final int viewfinder_view = 0x7f07006f;
 	}
 	public static final class layout {
-		public static final int camera = 0x7f030019;
-		public static final int main = 0x7f030021;
+		public static final int camera = 0x7f03001a;
+		public static final int main = 0x7f030023;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f050000;
